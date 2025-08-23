@@ -20,18 +20,18 @@ col1, col2 = st.columns(2, gap="large")
 with col1:
     st.subheader("Customer Profile")
     surname = st.text_input("Surname (optional)", "")
-    age = st.number_input("Age", min_value=18, max_value=92, value=30)
+    age = st.number_input("Age", min_value=17, max_value=92, value=28)
     gender = st.radio("Gender", ["Male", "Female"])
     geography = st.selectbox("Geography", ["France", "Germany", "Spain"])
 
 # --- Financial and Business Features ---  -> info untuk financial dan business customer
 with col2:
     st.subheader("Financial and Business")
-    credit_score = st.number_input("Credit Score", min_value=300, max_value=900, value=650, step=1)
-    balance = st.number_input("Balance (USD)", min_value=0.0, value=50000.0, step=1.0)
-    estimated_salary = st.number_input("Estimated Salary (USD)", min_value=0.0, value=60000.0, step=1.0)
-    tenure = st.slider("Tenure (Years with Bank)", min_value=0, max_value=10, value=5)
-    num_of_products = st.slider("Number of Products", min_value=1, max_value=4, value=2)
+    credit_score = st.number_input("Credit Score", min_value=200, max_value=1000, value=450, step=1)
+    balance = st.number_input("Balance (USD)", min_value=0.0, value=70000.0, step=1.0)
+    estimated_salary = st.number_input("Estimated Salary (USD)", min_value=0.0, value=70000.0, step=1.0)
+    tenure = st.slider("Tenure (Years with Bank)", min_value=0, max_value=10, value=3)
+    num_of_products = st.slider("Number of Products", min_value=1, max_value=5, value=3)
     has_cr_card = st.radio("Has Credit Card?", [1, 0], format_func=lambda x: "Yes" if x == 1 else "No")
     is_active_member = st.radio("Is Active Member?", [1, 0], format_func=lambda x: "Yes" if x == 1 else "No")
 
@@ -154,4 +154,5 @@ if st.button("Predict Customer Churn"):
 
     with col2:
         st.metric(label="Churn Probability", value=f"{proba_churn:.0%}")
+
         st.progress(int(proba_churn * 100))
