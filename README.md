@@ -22,3 +22,8 @@ Link Streamlit: https://app-for-churn-predict-agbdbhvgkkjbcbyt3sgmla.streamlit.a
 - Probabilitas – Ditampilkan dalam bentuk angka persentase dan progress bar untuk Loyal dan Churn.
 
 # Requirements
+- streamlit==1.45.1
+- pandas==2.2.3
+- scikit-learn==1.6.1
+- joblib==1.4.2
+- imbalanced-learn==0.13.0
